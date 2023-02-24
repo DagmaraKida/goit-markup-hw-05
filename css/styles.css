@@ -5,6 +5,8 @@
   --light-grey: #f5f4fa;
   --blue: #2196f3;
   --white: #ffffff;
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --box-shadows: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 *:focus {
@@ -482,14 +484,28 @@ h5 /* .text-card-title */ {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.25);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
+  min-width: 528px;
   min-height: 581px;
   background-color: #fff;
+  box-shadow: var(--box-shadows);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 350ms var(--cubic-bezier);
 }
 
 .close-btn {
@@ -502,10 +518,10 @@ h5 /* .text-card-title */ {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+  color: var(--black);
 }
 
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.close-btn:hover {
+  color: var(--blue);
+  transition: fill 250ms var(--cubic-bezier);
 }
