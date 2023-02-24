@@ -51,7 +51,7 @@
       <!-- HERO -->
       <section class="hero-section">
         <h1 class="hero-heading">EFEKTYWNE ROZWIĄZANIA<br />DLA WASZEGO BIZNESU</h1>
-        <button type="button" class="button button-hero">Zamów usługę</button>
+        <button type="button" class="button button-hero" class="modal-btn" data-modal-open>Zamów usługę</button>
       </section>
 
       <!--CZYM SIĘ ZAJMUJEMY-->
@@ -388,5 +388,14 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="close-btn" data-modal-close>X</button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
+
   </body>
 </html>
